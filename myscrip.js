@@ -16,6 +16,9 @@ function quay(){
         else if (!TAI.checked && XIU.checked){
             document.getElementById("daura").innerHTML = "Bạn đã thua!"
         }
+        else{
+            document.getElementById("daura").innerHTML = "Không hợp lệ!"
+        }
     
     }
 }
