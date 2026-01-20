@@ -4,14 +4,13 @@ const canvas1 = document.getElementById("itsacanvas1")
 const canvas2 = document.getElementById("itsacanvas2")
 const ctxt1 = canvas1.getContext("2d")
 const ctxt2 = canvas2.getContext("2d")
-const sizetion = 200;
 function trinhchieu(x,y){
-    var widthen1 = (x-1)*sizetion
-    var widthen2 = (y-1)*sizetion
+    var widthen1 = (x-1)*200
+    var widthen2 = (y-1)*200
     ctxt1.clearRect(0, 0, canvas1.width, canvas1.height);
     ctxt2.clearRect(0, 0, canvas2.width, canvas2.height);
-    ctxt1.drawImage(hinhanh, widthen1, 0, widthen1+sizetion,sizetion,0,0,sizetion,sizetion )
-    ctxt2.drawImage(hinhanh, widthen2, 0, widthen2+sizetion,sizetion,0,0,sizetion,sizetion);
+    ctxt1.drawImage(hinhanh, widthen1, 0, widthen1+200,200,0,0,200,200 )
+    ctxt2.drawImage(hinhanh, widthen2, 0, widthen2+200,200,0,0,200,200);
 }
 function laplai(a,b){
     var i=0
