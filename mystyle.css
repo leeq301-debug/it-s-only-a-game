@@ -11,3 +11,6 @@ button {
     font-size: 16px;
     background-color: red;
 }
+#itsacanvas1 {
+    display: inline;
+}
