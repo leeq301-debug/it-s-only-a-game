@@ -14,3 +14,7 @@ button {
 #itsacanvas1 {
     display: inline;
 }
+canvas {
+    width: 200px;
+    height: 200px;
+}
