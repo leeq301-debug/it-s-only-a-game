@@ -1,11 +1,9 @@
 const hinhanh = new Image();
 hinhanh.src = "texturepack.png";
-hinhanh.onload = function() {
-    const canvas1 = document.getElementById("itsacanvas1")
-    const canvas2 = document.getElementById("itsacanvas2")
-    const ctxt1 = canvas1.getContext("2d")
-    const ctxt2 = canvas2.getContext("2d")
-}
+const canvas1 = document.getElementById("itsacanvas1")
+const canvas2 = document.getElementById("itsacanvas2")
+const ctxt1 = canvas1.getContext("2d")
+const ctxt2 = canvas2.getContext("2d")
 function trinhchieu(x,y){
     var widthen1 = (x-1)*200
     var widthen2 = (y-1)*200
@@ -32,7 +30,10 @@ function quay(){
     var XIU = document.getElementById("nutxiu")
     var so1 = Math.floor(Math.random()*6)+1
     var so2 = Math.floor(Math.random()*6)+1
-    requestAnimationFrame(laplai(so1,so2))
+    hinhanh.onload = function(){
+        requestAnimationFrame(laplai(so1,so2))
+    }
+    
     if (so1+so2>6){
         if (TAI.checked && !XIU.checked){
             document.getElementById("daura").innerHTML = "Bạn đã thắng!"
