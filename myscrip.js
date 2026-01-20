@@ -21,9 +21,6 @@ function laplai(a,b){
     if (i<10+a && n<10+b){
         requestAnimationFrame(laplai(a,b))
     }
-    else{
-        trinhchieu(a,b)
-    }
 }
 function quay(){
     var TAI = document.getElementById("nuttai")
@@ -32,6 +29,7 @@ function quay(){
     var so2 = Math.floor(Math.random()*6)+1
     hinhanh.onload = function(){
         requestAnimationFrame(laplai(so1,so2))
+        trinhchieu(so1,so2)
     }
     
     if (so1+so2>6){
