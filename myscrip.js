@@ -1,9 +1,11 @@
 const hinhanh = new Image();
 hinhanh.src = "texturepack.png";
-const canvas1 = document.getElementById("itsacanvas1")
-const canvas2 = document.getElementById("itsacanvas2")
-const ctxt1 = canvas1.getContext("2d")
-const ctxt2 = canvas2.getContext("2d")
+hinhanh.onload = function() {
+    const canvas1 = document.getElementById("itsacanvas1")
+    const canvas2 = document.getElementById("itsacanvas2")
+    const ctxt1 = canvas1.getContext("2d")
+    const ctxt2 = canvas2.getContext("2d")
+}
 function trinhchieu(x,y){
     var widthen1 = (x-1)*200
     var widthen2 = (y-1)*200
