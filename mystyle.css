@@ -2,12 +2,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(240,240,0);
     margin: 20px;
-    color: rgb(240,0,0)
+    color: red;
 }
 button {
     color:blue;
     width: 100px;
     height: 40px;
     font-size: 16px;
-    background-color: lightgray;
+    background-color: red;
 }
