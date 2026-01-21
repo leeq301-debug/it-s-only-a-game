@@ -18,7 +18,7 @@ hinhanh.onload = function(){
     ctxt2.drawImage(hinhanh, 0, 0, 200, 200, 0, 0, 200, 200);
 };
 
-function trinhchieu(x, y){
+function trinhchieu(x, y,hinhanh){
     var widthen1 = (x - 1) * 200;
     var widthen2 = (y - 1) * 200;
     ctxt1.clearRect(0, 0, canvas1.width, canvas1.height);  // Dùng canvas.width mặc định (300)
@@ -27,12 +27,12 @@ function trinhchieu(x, y){
     ctxt2.drawImage(hinhanh, widthen2, 0, 200, 200, 0, 0, 200, 200);
 }
 
-function laplai(a, b, tim, intervalId){
+function laplai(a, b, tim, intervalId,hinhanh){
     tim++;
     trinhchieu(tim, tim);  // Lặp qua frame chung (có thể sửa thành riêng nếu cần)
     if (tim >= 24){  // Dừng sau 24 frame
         clearInterval(intervalId);
-        trinhchieu(a, b);  // Hiển thị kết quả cuối
+        trinhchieu(a, b,hinhanh);  // Hiển thị kết quả cuối
     }
     // Không cần else với setInterval nữa, vì setInterval đã được gọi ở quay()
 }
@@ -44,7 +44,7 @@ function quay(hinhanh){
     var so2 = Math.floor(Math.random() * 6) + 1;
 
     if (hinhanh.complete){
-        var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);  // Thêm intervalId và delay 100ms
+        var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId,hinhanh), 100);  // Thêm intervalId và delay 100ms
     } else {
         hinhanh.onload = function(){
             var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);
