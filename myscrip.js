@@ -59,7 +59,8 @@ function quay(){
         } else {
             document.getElementById("daura").innerHTML = "Không hợp lệ!";
         }
-    } else {
+    } 
+    else {
         if (TAI.checked && !XIU.checked){
             document.getElementById("daura").innerHTML = "Bạn đã thua!";
         } else if (!TAI.checked && XIU.checked){
