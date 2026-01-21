@@ -38,6 +38,8 @@ function laplai(a, b, intervalId){
     }
 }
 function kiemtra(a,b) {
+    var TAI = document.getElementById("nuttai");
+    var XIU = document.getElementById("nutxiu");
     if (a + b > 6){
         if (TAI.checked && !XIU.checked){
             document.getElementById("daura").innerHTML = "Bạn đã thắng!";
@@ -55,10 +57,10 @@ function kiemtra(a,b) {
         } else {
             document.getElementById("daura").innerHTML = "Không hợp lệ!";
         }
+    }
 }
 function quay(){
-    var TAI = document.getElementById("nuttai");
-    var XIU = document.getElementById("nutxiu");
+    
     var so1 = Math.floor(Math.random() * 6) + 1;
     var so2 = Math.floor(Math.random() * 6) + 1;
 
