@@ -1,7 +1,7 @@
 const hinhanh = new Image();
 hinhanh.src = "texturepack.png";
-const canvas1 = document.getElementById("itsacanvas1")
-const canvas2 = document.getElementById("itsacanvas2")
+var canvas1 = document.getElementById("itsacanvas1")
+var canvas2 = document.getElementById("itsacanvas2")
 var ctxt1 = canvas1.getContext("2d")
 var ctxt2 = canvas2.getContext("2d")
 function trinhchieu(x,y){
