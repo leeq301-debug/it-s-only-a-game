@@ -37,21 +37,8 @@ function laplai(a, b, intervalId){
         trinhchieu(a, b);  // Hiển thị kết quả cuối
     }
 }
-
-function quay(){
-    var TAI = document.getElementById("nuttai");
-    var XIU = document.getElementById("nutxiu");
-    var so1 = Math.floor(Math.random() * 6) + 1;
-    var so2 = Math.floor(Math.random() * 6) + 1;
-
-    if (hinhanh.complete){
-        var intervalId = setInterval(() => laplai(so1, so2, intervalId), 100);  // Thêm intervalId và delay 100ms
-    } else {
-        hinhanh.onload = function(){
-            var intervalId = setInterval(() => laplai(so1, so2, intervalId), 100);
-        }
-    }
-    if (so1 + so2 > 6){
+function kiemtra(a,b) {
+    if (a + b > 6){
         if (TAI.checked && !XIU.checked){
             document.getElementById("daura").innerHTML = "Bạn đã thắng!";
         } else if (!TAI.checked && XIU.checked){
@@ -68,5 +55,21 @@ function quay(){
         } else {
             document.getElementById("daura").innerHTML = "Không hợp lệ!";
         }
+}
+function quay(){
+    var TAI = document.getElementById("nuttai");
+    var XIU = document.getElementById("nutxiu");
+    var so1 = Math.floor(Math.random() * 6) + 1;
+    var so2 = Math.floor(Math.random() * 6) + 1;
+
+    if (hinhanh.complete){
+        var intervalId = setInterval(() => laplai(so1, so2, intervalId), 100);  // Thêm intervalId và delay 100ms
+    } else {
+        hinhanh.onload = function(){
+            var intervalId = setInterval(() => laplai(so1, so2, intervalId), 100);
+        }
     }
+    
+    document.getElementById("daura").innerHTML = "";
+    setTimeout(() => kiemtra(so1,so2), 2500);
 }
