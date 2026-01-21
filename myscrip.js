@@ -11,7 +11,7 @@ canvas2.height = 200;
 
 var ctxt1 = canvas1.getContext("2d");
 var ctxt2 = canvas2.getContext("2d");
-
+var tim = 0;
 hinhanh.onload = function(){
     // Vẽ hình ban đầu (chỉ một lần)
     ctxt1.drawImage(hinhanh, 0, 0, 200, 200, 0, 0, 200, 200);
@@ -27,12 +27,13 @@ function trinhchieu(x, y){
     ctxt2.drawImage(hinhanh, widthen2, 0, 200, 200, 0, 0, 200, 200);
 }
 
-function laplai(a, b, tim, intervalId){
+function laplai(a, b, intervalId){
     tim++;
     var phandu = (tim % 6) + 1;
     trinhchieu(phandu, phandu);  // Lặp qua frame dựa trên phần dư
     if (tim >= 24){  // Dừng sau 24 bước
         clearInterval(intervalId);
+        tim = 0;
         trinhchieu(a, b);  // Hiển thị kết quả cuối
     }
 }
@@ -44,10 +45,10 @@ function quay(){
     var so2 = Math.floor(Math.random() * 6) + 1;
 
     if (hinhanh.complete){
-        var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);  // Thêm intervalId và delay 100ms
+        var intervalId = setInterval(() => laplai(so1, so2, intervalId), 100);  // Thêm intervalId và delay 100ms
     } else {
         hinhanh.onload = function(){
-            var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);
+            var intervalId = setInterval(() => laplai(so1, so2, intervalId), 100);
         }
     }
     if (so1 + so2 > 6){
