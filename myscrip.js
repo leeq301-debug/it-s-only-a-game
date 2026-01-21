@@ -4,6 +4,8 @@ var canvas1 = document.getElementById("itsacanvas1")
 var canvas2 = document.getElementById("itsacanvas2")
 var ctxt1 = canvas1.getContext("2d")
 var ctxt2 = canvas2.getContext("2d")
+ctxt1.drawImage(hinhanh,0,0,200,200,0,0,200,200)
+ctxt1.drawImage(hinhanh,0,0,200,200,0,0,200,200)
 function trinhchieu(x,y){
     var widthen1 = (x-1)*200
     var widthen2 = (y-1)*200
@@ -18,7 +20,7 @@ function laplai(a,b){
     i++
     n++
     trinhchieu(i,n)
-    if (i<10+a && n<10+b){
+    if (i<24+a && n<24+b){
         requestAnimationFrame(laplai(a,b))
     }
 }
