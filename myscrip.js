@@ -4,6 +4,11 @@ hinhanh.src = "texturepack.png";
 var canvas1 = document.getElementById("itsacanvas1");
 var canvas2 = document.getElementById("itsacanvas2");
 
+canvas1.width = 200;
+canvas1.height = 200;
+canvas2.width = 200;
+canvas2.height = 200;
+
 var ctxt1 = canvas1.getContext("2d");
 var ctxt2 = canvas2.getContext("2d");
 
@@ -32,7 +37,7 @@ function laplai(a, b, tim, intervalId){
     // Không cần else với setInterval nữa, vì setInterval đã được gọi ở quay()
 }
 
-function quay(){
+function quay(hinhanh){
     var TAI = document.getElementById("nuttai");
     var XIU = document.getElementById("nutxiu");
     var so1 = Math.floor(Math.random() * 6) + 1;
