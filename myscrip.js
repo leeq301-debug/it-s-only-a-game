@@ -35,6 +35,7 @@ function laplai(a, b, intervalId){
         clearInterval(intervalId);
         tim = 0;
         trinhchieu(a, b);  // Hiển thị kết quả cuối
+        kiemtra(a, b); // Gọi kiểm tra kết quả ngay khi animation dừng
     }
 }
 function kiemtra(a,b) {
@@ -73,5 +74,5 @@ function quay(){
     }
     
     document.getElementById("daura").innerHTML = "";
-    setTimeout(() => kiemtra(so1,so2), 2500);
+    // `laplai` sẽ gọi `kiemtra` khi animation kết thúc.
 }
