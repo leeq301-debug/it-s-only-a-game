@@ -4,12 +4,6 @@ hinhanh.src = "texturepack.png";
 var canvas1 = document.getElementById("itsacanvas1");
 var canvas2 = document.getElementById("itsacanvas2");
 
-// Đặt kích thước canvas thực tế để khớp với vẽ hình 200x200
-canvas1.width = 200;
-canvas1.height = 200;
-canvas2.width = 200;
-canvas2.height = 200;
-
 var ctxt1 = canvas1.getContext("2d");
 var ctxt2 = canvas2.getContext("2d");
 
