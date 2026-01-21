@@ -4,12 +4,7 @@ hinhanh.src = "texturepack.png";
 var canvas1 = document.getElementById("itsacanvas1");
 var canvas2 = document.getElementById("itsacanvas2");
 
-// Đặt kích thước canvas thực tế để khớp với vẽ
-canvas1.width = 200;
-canvas1.height = 200;
-canvas2.width = 200;
-canvas2.height = 200;
-
+// Không cần đặt canvas.width/height nữa vì CSS đã xử lý hiển thị
 var ctxt1 = canvas1.getContext("2d");
 var ctxt2 = canvas2.getContext("2d");
 
@@ -22,7 +17,7 @@ hinhanh.onload = function(){
 function trinhchieu(x, y){
     var widthen1 = (x - 1) * 200;
     var widthen2 = (y - 1) * 200;
-    ctxt1.clearRect(0, 0, canvas1.width, canvas1.height);
+    ctxt1.clearRect(0, 0, canvas1.width, canvas1.height);  // Dùng canvas.width mặc định (300)
     ctxt2.clearRect(0, 0, canvas2.width, canvas2.height);
     ctxt1.drawImage(hinhanh, widthen1, 0, 200, 200, 0, 0, 200, 200);
     ctxt2.drawImage(hinhanh, widthen2, 0, 200, 200, 0, 0, 200, 200);
