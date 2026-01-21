@@ -60,6 +60,12 @@ function quay(){
             document.getElementById("daura").innerHTML = "Không hợp lệ!";
         }
     } else {
-        document.getElementById("daura").innerHTML = "Kết quả: " + (so1 + so2);
+        if (TAI.checked && !XIU.checked){
+            document.getElementById("daura").innerHTML = "Bạn đã thua!";
+        } else if (!TAI.checked && XIU.checked){
+            document.getElementById("daura").innerHTML = "Bạn đã thắng!";
+        } else {
+            document.getElementById("daura").innerHTML = "Không hợp lệ!";
+        }
     }
 }
