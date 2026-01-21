@@ -18,33 +18,33 @@ hinhanh.onload = function(){
     ctxt2.drawImage(hinhanh, 0, 0, 200, 200, 0, 0, 200, 200);
 };
 
-function trinhchieu(x, y,hinhanh){
+function trinhchieu(x, y){
     var widthen1 = (x - 1) * 200;
     var widthen2 = (y - 1) * 200;
-    ctxt1.clearRect(0, 0, canvas1.width, canvas1.height);  // Dùng canvas.width mặc định (300)
+    ctxt1.clearRect(0, 0, canvas1.width, canvas1.height);
     ctxt2.clearRect(0, 0, canvas2.width, canvas2.height);
     ctxt1.drawImage(hinhanh, widthen1, 0, 200, 200, 0, 0, 200, 200);
     ctxt2.drawImage(hinhanh, widthen2, 0, 200, 200, 0, 0, 200, 200);
 }
 
-function laplai(a, b, tim, intervalId,hinhanh){
+function laplai(a, b, tim, intervalId){
     tim++;
-    trinhchieu(tim, tim);  // Lặp qua frame chung (có thể sửa thành riêng nếu cần)
-    if (tim >= 24){  // Dừng sau 24 frame
+    var phandu = (tim % 6) + 1;
+    trinhchieu(phandu, phandu);  // Lặp qua frame dựa trên phần dư
+    if (tim >= 24){  // Dừng sau 24 bước
         clearInterval(intervalId);
-        trinhchieu(a, b,hinhanh);  // Hiển thị kết quả cuối
+        trinhchieu(a, b);  // Hiển thị kết quả cuối
     }
-    // Không cần else với setInterval nữa, vì setInterval đã được gọi ở quay()
 }
 
-function quay(hinhanh){
+function quay(){
     var TAI = document.getElementById("nuttai");
     var XIU = document.getElementById("nutxiu");
     var so1 = Math.floor(Math.random() * 6) + 1;
     var so2 = Math.floor(Math.random() * 6) + 1;
 
     if (hinhanh.complete){
-        var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId,hinhanh), 100);  // Thêm intervalId và delay 100ms
+        var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);  // Thêm intervalId và delay 100ms
     } else {
         hinhanh.onload = function(){
             var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);
