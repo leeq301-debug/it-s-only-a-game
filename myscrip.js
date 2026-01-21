@@ -30,6 +30,7 @@ function laplai(a, b, tim, intervalId){
         clearInterval(intervalId);
         trinhchieu(a, b);  // Hiển thị kết quả cuối
     }
+    // Không cần else với setInterval nữa, vì setInterval đã được gọi ở quay()
 }
 
 function quay(){
@@ -39,13 +40,12 @@ function quay(){
     var so2 = Math.floor(Math.random() * 6) + 1;
 
     if (hinhanh.complete){
-        var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);  // 100ms mỗi frame
+        var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);  // Thêm intervalId và delay 100ms
     } else {
         hinhanh.onload = function(){
             var intervalId = setInterval(() => laplai(so1, so2, 0, intervalId), 100);
-        };
+        }
     }
-    
     if (so1 + so2 > 6){
         if (TAI.checked && !XIU.checked){
             document.getElementById("daura").innerHTML = "Bạn đã thắng!";
