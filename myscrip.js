@@ -76,3 +76,16 @@ function quay(){
     document.getElementById("daura").innerHTML = "";
     // `laplai` sẽ gọi `kiemtra` khi animation kết thúc.
 }
+function datlaixiu() {
+    document.getElementById("daura").innerHTML = "";
+    document.getElementById("nuttai").checked = false;
+    document.getElementById("nutxiu").checked = false;
+    if (hinhanh.complete){
+        trinhchieu(1,1);
+    }
+    else {
+        hinhanh.onload = function(){
+            trinhchieu(1,1);
+        }
+    }
+}
