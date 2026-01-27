@@ -17,3 +17,8 @@ canvas {
     height:200px;
     display: inline-block;
 }
+.lichsu {
+    border: solid;
+    border-color: black;
+    width:600px;
+}
