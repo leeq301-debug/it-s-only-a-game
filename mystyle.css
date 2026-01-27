@@ -19,6 +19,17 @@ canvas {
 }
 .lichsu {
     border: solid;
-    border-color: black;
-    width:600px;
+    border-color: rgb(109, 109, 0);
+    width:200px;
+}
+span {
+    display: inline-block;;
+}
+span.lichsu {
+    height: 400px;
+    
+    
+}
+div.lichsu {
+    height:40px;
 }
